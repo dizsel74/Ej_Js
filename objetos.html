@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /////////////// notracion punto y corchete
+      var miObjeto = {
+        nombre: "gino",
+        edad: 23,
+        "su color": "cafe",
+        peso: 6,
+      };
+
+      console.log(miObjeto.nombre + " " + miObjeto.edad);
+      console.log(miObjeto["su color"] + " " + miObjeto.peso);
+
+      ////////////////////
+      var ganadores = {
+        1: "uno",
+        2: "dos",
+        arreglo: ["casa", "carro"],
+      };
+      var posicion = 1;
+      console.log(ganadores[posicion]); // usar variables para acceder a la propiedades de un objeto no puedes usar punto
+
+      ganadores.arreglo.push("perro");
+      console.log(ganadores.arreglo); // con punto tienes que dar siempre el nombre de la propiedad
+      console.log(ganadores);
+      delete ganadores.arreglo;
+      console.log(ganadores);
+
+      /////////////////////////// usar un objeto para remplazar  BUSCAR DENTRO OBJ
+
+      function nombreQuimicos(simbolo) {
+        //recibe el simbolo "parametro"
+
+        var traduceSimbolo = {
+          Al: "Aluminio",
+          B: "Boro",
+          H: "Hidrogeno",
+        };
+
+        return traduceSimbolo[simbolo]; //regresa el
+      }
+
+      var simbolo = "H";
+
+      console.log(nombreQuimicos(simbolo)); //envia argumento e imprime el valor de la propiedad
+
+      /////////////////////// Verificar si tiene el OBJ una Propieddd
+
+      var caballo = {
+        color: "cafe",
+        raza: "arabe",
+        pasaporte: true,
+      };
+
+      console.log(caballo.hasOwnProperty("raza")); //VERIFICA SI HAY ESA PROPIEDAD EN EL OBJ caballo
+
+      function verificaPropiedadesCaballo(obj, propiedad) {
+        if (obj.hasOwnProperty(propiedad)) {
+          return "propiedad: " + obj[propiedad];
+        } else {
+          return "Sin esa propiedad";
+        }
+      }
+
+      console.log(verificaPropiedadesCaballo(caballo, "color"));
+
+      //////////////////////////// arreglo de objetos complejos
+
+      var ordenPizzas = [
+        {
+          tipo: "margarita",
+          tamaño: "individual",
+          precio: 22.5,
+          toppings: ["piña", "queso", "champiñon"],
+          toGo: true,
+        },
+        {
+          tipo: "3 quesos",
+          tamaño: "individual",
+          precio: 25.5,
+          toppings: ["piña", "champiñon"],
+          toGo: true,
+        },
+      ];
+
+      console.log(ordenPizzas[1].toppings[1]);
+      console.log(ordenPizzas[1]["toppings"][1]);
+
+      //////////////////////////// COLECCION DISCOS /////////////
+      //OBJ ANIDADOS
+      var discoteca = {
+        1: {
+          tituloDelAlbum: "titulo1",
+          artista: "Kid rock",
+          canciones: ["paul", "jhon"],
+        },
+        2: {
+          tituloDelAlbum: "titulo2",
+        },
+      };
+
+      function actualizarDiscos(discoteca, id, propiedad, valor) {
+        if (valor === "") { // ELIMINA LAS PROPIEDADES DEL DISCO SEGUN SE PASEN
+
+          delete discoteca[id][propiedad]; 
+
+        } else if (propiedad === "canciones") { //
+
+          discoteca[id][propiedad] = discoteca[id][propiedad] || [];
+          discoteca[id][propiedad].push(valor);
+
+        } else {
+
+          discoteca[id][propiedad] = valor;
+        }
+      }
+      var id = 2;
+
+      console.log(discoteca[id].canciones);
+
+      actualizarDiscos(discoteca, id, "artista", "juanes");
+
+      console.log(discoteca[id].canciones);
+
+     
+    </script>
+  </body>
+</html>

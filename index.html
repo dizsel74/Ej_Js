@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("hola mundo");
+      var id = "myid";
+      console.log(id);
+      var id = false;
+      console.log(id);
+      var a = 15;
+      var b = 2;
+      cosiente = a / b;
+      resto = a % b;
+      console.log(a);
+      console.log(b);
+      console.log(cosiente);
+      console.log(resto);
+
+      //increnento
+      a = a + 1;
+      console.log(a);
+
+      a++;
+      console.log(a);
+      //decremento
+      a = a - 1;
+      console.log(a);
+      a--;
+      console.log(a);
+
+      a += 5;
+      console.log(a);
+      b -= 3;
+      console.log(b);
+      var c = 10;
+      c *= b;
+      console.log(c);
+      c /= a;
+      console.log(c);
+      // ------------------------   CADENAS -----------------------------//
+
+      var nombre = '"Alan"';
+      var apellido = " Poe";
+      console.log("hola:" + nombre + apellido);
+
+      var cadenaCompleta = "¿";
+      var sadudo = "Hi! ";
+      cadenaCompleta += sadudo;
+      console.log(cadenaCompleta);
+
+      var miCadena;
+      miCadena = "hola mundo";
+      console.log(miCadena.length);
+
+      console.log(miCadena[0]); // ---- acceder a posiciones de cadena ---//
+      console.log(miCadena[miCadena.length - 1]); //leer ultimo caracter  de un  string
+      var n = 3;
+      console.log(miCadena[miCadena.length - n]); //palabra loca
+      var miPalabraLoca = "El" + apellido + " de " + nombre;
+      console.log(miPalabraLoca);
+      //--------------------- ARREGLOS ------------------
+
+      var miArreglo = ["juan", 20];
+
+      console.log(miArreglo);
+
+      var estudiantes = ["arturo", "paco", "juan"];
+      console.log(estudiantes);
+      // ----------------------------- Arreglos Anidados
+      var listaEstudiante = [
+        ["nora", 10],
+        ["gino", 9],
+        ["Paco", 8],
+      ];
+      /*      indices            0       ,    1      ,   2    
+    índice Interno      0      1     0      1  ,  0   1*/
+      console.log(listaEstudiante);
+      console.log(listaEstudiante[2], listaEstudiante[1]);
+      console.log(listaEstudiante.length);
+
+      var newArreglo = listaEstudiante[0];
+      console.log(newArreglo[1]);
+      console.log(listaEstudiante[0][0]); //nora
+      //METODO ARREGLOS PUSH
+
+      /* ------ push         pop
+--------  unshift        shift ------*/
+      var seasons = ["invierno", "primavera", "otoño"];
+
+      seasons.push("Verano"); // inserta al final del arreglo
+      console.log(seasons);
+
+      seasons.pop(); // quita al final del arreglo
+
+      popeado = seasons.pop(); //ver lo que se quioto
+      console.log(seasons);
+      console.log(popeado);
+
+      shifeado = seasons.shift(); //quit 1er elemento
+
+      console.log(seasons + " se quito  " + shifeado);
+      seasons.unshift("Summer");
+
+      console.log(seasons); //pone al inicio de arreglo
+
+      function suma(parametro_a, parametro_b) {
+        var add = parametro_a + parametro_b;
+        console.log("el resultado es : " + add);
+      }
+      var argumentoA = 2;
+      var argumentoB = 3;
+      suma(argumentoA, argumentoB);
+
+      /* -----------------------  Devolver resultado  de una funcion  -------- */
+      function times(a, b) {
+        var result = a * b;
+        return result;
+      }
+      console.log(times(2, 2));
+
+      var newResult = times(3, 3);
+      console.log(newResult);
+      /* Cola   o Cue ---*/
+
+      ////////////////////////// FUNCION DE CUE O COLA DE INSERTAR Y REMOVER /////////////////////////////
+
+      function proximoFila(parametroArgumento, parametroNumero) {
+        //console.log(parametroArgumento);
+        // console.log(parametroNumero);
+        parametroArgumento.push(parametroNumero); //AGREGA A LA COLA
+        // console.log(parametroArgumento);
+        shifeado = parametroArgumento.shift(); //ELIMINA EL 1er ELEMENTO
+        // console.log(parametroArgumento);// REGRESA EL ELEMNTO REMOVIDO
+        return shifeado;
+      }
+      var argumentoCadena = [10, 20];
+      var argumentoNumero = 2;
+
+      console.log("Antes :" + JSON.stringify(argumentoCadena)); //JSON.stringify convierte a string
+
+      console.log(proximoFila(argumentoCadena, argumentoNumero));
+
+      console.log("Despues :" + JSON.stringify(argumentoCadena));
+
+      //////////////////////////// BOOLEAN ////////////////////////////////////////////////////////
+      console.log(1 == 1); //operador igualdad
+      console.log(1 === "1"); //operador igualdad estricta
+      console.log("Hola" !== "hola"); // not equal to
+
+      console.log("ACB" > "ABC"); //true
+      var n = 8;
+      console.log(n > 1 && n === "8"); //false
+      console.log(!(n == n) + " !X o NOT"); //false
+
+      /////////////////////////////// CONDICIONALES //////////////////////////
+      if (n == n) {
+        console.log("El IF es verdadero " + n + " " + n);
+      }
+      function clasificadorValor(valor) {
+        if (valor % 2 == 0) {
+          console.log("divisible entre 2");
+        } else if (valor % 3 == 0) {
+          console.log("divisible entre 3");
+        } else {
+          console.log(" no es divisibre entre 2 o 3");
+        }
+      }
+
+      //clasificadorValor(8);
+      clasificadorValor(9);
+      //clasificadorValor(7);
+      /////////////////////////////  GOLF ///////////////////////////
+      function golf(par, golpes) {
+        if (golpes == 1) {
+          return "Hole in One";
+        } else if (golpes <= par - 2) {
+          return "Eagle";
+        } else if (golpes <= par - 1) {
+          return "Birdie";
+        } else if (golpes == par) {
+          return "Par";
+        } else if (golpes == par + 1) {
+          return "Bogey";
+        } else if (golpes == par + 2) {
+          return "Double Bogey";
+        } else {
+          return "Go Home!";
+        }
+      }
+      var par = 4;
+      var golpes = 6;
+      console.log(golf(par, golpes));
+
+      /////////////////////////// SWITCH ////////////////////
+
+      function clasificaColor(color) {
+        var respuesta;
+        switch (color) {
+          case "rojo":
+            console.log("color rojo");
+            break;
+          case "negro":
+            console.log("negrito");
+            break;
+          default:
+            console.log("blanco");
+            break;
+        }
+        return respuesta;
+      }
+
+      clasificaColor();
+
+      //////////////////////////////  Retorno anticipado //////
+
+      function esPar(num) {
+        if (num % 2 !== 0) {
+          return undefined;
+        }
+        return Math.sqrt(num);
+      }
+
+      console.log(esPar(10));
+
+      /////////////////// BLACK JACK /////////
+      var conteo = 0;
+      function contarCartas(carta) {
+        var desicion;
+
+        switch (carta) {
+          
+          case 2:
+          case 3:
+          case 4:
+          case 5:
+          case 6:
+            conteo++;
+            break;
+
+          case 7:
+          case 8:
+          case 9:
+            conteo=conteo;
+            break;
+
+          case 10:
+          case "J":
+          case "Q":
+          case "K":
+          case "A":
+            conteo--;
+            break;
+        }
+        if (conteo >0){
+          desicion ="Apuesta";
+        }else {
+          desicion ="Esperar";
+        }
+        return conteo +" "+ desicion
+      }
+      console.log(contarCartas("A"));
+      console.log(contarCartas(7));
+      console.log(contarCartas(3));
+      console.log(contarCartas(2));
+      console.log(contarCartas(2));
+      console.log(contarCartas(2));
+
+    </script>
+  </body>
+</html>
