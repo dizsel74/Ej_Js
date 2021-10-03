@@ -269,16 +269,49 @@ console.log(rangoAleatorio(2,6));
 var a =parseInt("2"); //convirerte a entero
 var b = parseInt("101010",20); // convierte a binario, hexa  o en su base
 console.log(b);
-
+/////////////////////////  TERNARIOS
 function retornaMinimo(x,y){
-    console.log(x<y ? x : y); //simple js
-    if (x<y){//normal
+
+   return x<y ? x : y ; //simple js
+    
+    /*if (x<y){//normal
         console.log(x);
     }else{
         console.log(y);
-    }
+    }*/
 }
-retornaMinimo(20,25);
+console.log(retornaMinimo(20,25));
+
+var a = 24; 
+var b=6;
+console.log(a>b ? a+2 : b-1)  // condicion ?  opc 1  :  opc 2 
+
+function comparaNum(a,b){
+    /*if(a ==b){
+        return "a y b iguales";
+    }else if(a>b){
+        return "a mayor que b"
+    }else{
+        return "b es mayor que a"
+    }*/
+    return a==b ? "a y b iguales"
+         : a>b ? "A mayor"
+         : "B mayor";
+}
+console.log(comparaNum(2,1));
+
+///////////////////////// Mutar Arreglo  /////////////
+
+const MI_ARREGLO =[1,2,3];
+MI_ARREGLO[1]="q";
+console.log(MI_ARREGLO);
+///////////////////////// Inmutar Arreglo  /////////////
+let color ={
+    "verde": "GREEN",
+    "negro": "BLACK"
+};
+
+Object.freeze(color); 
     </script>
   </body>
 </html>
