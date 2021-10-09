@@ -95,6 +95,7 @@
       console.log(ordenPizzas[1]["toppings"][1]);
 
       //////////////////////////// COLECCION DISCOS /////////////
+
       //OBJ ANIDADOS
       var discoteca = {
         1: {
@@ -312,6 +313,192 @@ let color ={
 };
 
 Object.freeze(color); 
+/////////////// funcion flecha  anonimas //////////////////////
+
+const fecha = function(){  //FUNCION ANONIMA
+  return new Date();
+};
+
+const fechas = () => new Date(); //DE ANONIMA A FLECHA
+
+///////////////////// Anonima  A flecgha y su llamado pasando parametros
+const sumarTres =function (x){
+  return x+3;
+};
+
+
+const sumarTres2 = (x) => x+3; //ARROW
+console.log(sumarTres2(3));
+///////////////////////////////////
+
+ const concatenarArreglos = function(arr1, arr2){ //ANONIMA
+    return arr1.concat(arr2)
+};
+
+console.log([1,2],["a","f","j"])
+console.log(concatenarArreglos([1,2],["a","f","j"]));
+
+const concatenarArreglo = (arr1, arr2) => arr1.concat(arr2); // ARROW
+
+console.log(concatenarArreglo([1,2],["a","f","j"]));
+
+ /////////////////////////////////////////////
+
+ const sumar = (a,b)=>{ //flecha
+    let x= 6;
+    return a+b+x;
+  };
+
+  console.log(sumar(1,2));
+//////////////////////////// DEFAUL VALUE + ARROW   /////////////
+const incrementar =(numero, incremento=10) => numero + incremento;
+
+console.log(incrementar(1, )); // el valor va vacio pero tiene un valor por default de 10
+
+
+
+
+/////////////////////// OPERADOR REST  << ... Nombre>>  ////////////////////
+    
+    const sum =(...param) => param.reduce((a,b)=> a+b,0); // va en los parametros que recibe la funcion
+    console.log(sum(1,2,3,3,1));
+    
+/////////////////////// OPERADOR SPREAD << ... Nombre>>  ////////////////////  
+    const numArr=[1,2,3];
+
+    function suma(a,b,c){ //flcha  const suma =(a,b,c)=> a+b+c+;
+      return a+b+c;
+    }
+
+  console.log(suma(...numArr)); // se pasa spred en la entrada o en lo argumentos
+
+
+
+//////////////////////// DESEST>RUCTURAR OBJETOS  /////////// para pasar los propiedades avariables
+const usuario= {
+ nom:"Arturo",
+ edad :42
+};
+
+const nombre = usuario.nom; // antes o forma normal es5
+const años = usuario.edad;
+
+const {nom,edad}=usuario; // otra forma de descostruir es6
+
+
+//////////////////////// ahora con 3
+
+const coord ={
+  x:2,
+  y:1,
+  z:7,
+};
+
+var {x,y,z}=coord;
+console.log(z);
+//////////////////////// ahora con obj anidado 
+const objeto ={  //ESTE ES EL OBJETO
+  objetoAnidado :{
+      propiedad1: "Valor 1",
+      propiedad2 :"valor 2 de la propiedad",
+      porpiedad3 : 1
+  }
+};
+
+const {objetoAnidado: { //AQUI  EXTRAIGO LAS PROPIEDADES DEL OBJETO 
+  propiedad1:nuevoNmbre1,
+  propiedad2,
+  porpiedad3:nuevoNom3}}=objeto;
+  // DAN EL MISMO RESULTADO ESTAS 2 LINEAS diferente forma de solicitarlo
+
+  console.log(objeto["objetoAnidado"].propiedad2); //es
+  console.log(propiedad2);
+
+console.log(nuevoNom3 + " es el valor de la propieda 3 del objeto anidado REASIGNADO A OTRO NOM VARIABLE");
+
+
+/////////////////////////  PRONOSTICO CLIMA //////
+
+const PRONOSTICO_LOCAL ={
+  ayer:{
+      tmaxima: 28,
+      tminima: 16
+  },
+  hoy:{
+      tmaxima: 25,
+      tminima: 14
+  },
+    mañana:{
+      tmaxima: 20,
+      tminima: 10
+    }
+};
+
+  console.log(PRONOSTICO_LOCAL.hoy.tminima);
+  console.log(PRONOSTICO_LOCAL["hoy"].tminima);
+  console.log(PRONOSTICO_LOCAL["hoy"]["tminima"]);
+
+  const Calor =PRONOSTICO_LOCAL.ayer.tmaxima;
+ console.log("Ayer la temp max fue de "+  Calor+ " grados celsius");
+
+  const {hoy:{tmaxima : Alta, tminima: Baja}} = PRONOSTICO_LOCAL; // Deconstruction
+  console.log(Alta);//solo se tiene que usar la variable recien autorizada
+
+//////////////////////////////////// Deconstruccion Arrays /////////////////
+
+
+//cambiar valores y estructura del arreglo
+
+var a =1;
+var b= 3;
+
+console.log("Valor de a antes de descostruirlo :"+a);
+console.log("Valor de b antes de descostruirlo :"+b);
+
+// arreglo coo lo deseo     = arreglo original
+            [b,a]  =   [a,b];
+console.log("Valor de a despues de descostruirlo :"+a);
+console.log("Valor de b despues de descostruirlo :"+b);
+
+///////////////////////////////////// DESSETRUCTURACION CON REST ///////////
+ var arregloInicial =[1,2,3,4,5,6,7,8,9];
+
+ function eliminaTresInicio(parametroEntrada){
+   var  [ , , , ...arregloMenosTres] =parametroEntrada
+  return arregloMenosTres;
+ };
+
+ console.log(eliminaTresInicio(arregloInicial));
+
+ ///////////////////////////////////// DESSETRUCTURACION CON pop ///////////
+ var arregloInicial =[1,2,3,4,5,6,7,8,9];
+
+function eliminaTresFinal(parametroEntrada){
+  var  [...arregloMenosTres]= parametroEntrada;
+  for(var i=0; i<3;i++){
+    arregloMenosTres.pop();
+  }
+  return "Longitud final :" + arregloMenosTres.length + " arreglo final : " + arregloMenosTres + " Arreglo Inicial : " + parametroEntrada;
+};
+
+console.log(eliminaTresFinal(arregloInicial));
+
+//////////////////// USAR ARREGLO COMO PARAMETRO Y DESCONSTRUCCION   /////
+
+const estadisticas ={
+      max : 20,
+      moda :54,
+      mediana : 34.5,
+      min :-0.2,
+      prom : 5
+};
+const mitad= ({max,min}=estadisticas)=>(max+min)/2;
+  
+console.log(mitad(estadisticas));
+
+
+////////////////////////////////////
+
     </script>
   </body>
 </html>
