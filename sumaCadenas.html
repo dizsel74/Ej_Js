@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+        var arreglo1 =[1,2,3,4];
+        var arreglo2 = [5,6,1,8,9];
+
+    function suma1(arreglo1,arreglo2){
+            for (j=0; j<arreglo1.length; j++){
+                var suma=0;
+                a = arreglo1[j];
+                for(i=0;i<arreglo2.length; i++){
+                    suma= suma + arreglo2[i];
+                }
+            console.log(`Suma el valor ${a}  a la suma interio ${suma} = ` + (a+suma));
+            }
+    }
+
+    suma1(arreglo1,arreglo2);
+
+    function suma1a1(a,b){
+        if(a.length>=b.length){
+            for (j=0;j<a.length && j<b.length;j++){
+                valor1 = a[j];
+                valor2 = b[j];
+                console.log("1er "+valor1+valor2);
+            }
+        }else{
+            for (j=0;j<b.length && j<a.length;j++){
+                valor1 = a[j];
+                valor2 = b[j];
+                console.log(valor1+valor2 +" 2do");
+            }
+        }
+    }
+    suma1a1(arreglo1,arreglo2);
+    </script>
+</body>
+</html>

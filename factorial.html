@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+console.log('---------- factorial n! -------');
+      function factorial(n){  //Version 1 
+        if(n==0){
+          console.log('El factorial de 0 es 1 n!=1');
+        }else{
+          var factorial=1;
+          for (i=1; i<=n; i++){
+            factorial=factorial*i;
+          }
+          console.log('el factorial de '+n+' es '+factorial+ ' << '+n+'!='+factorial+' >>');
+        }
+
+      }
+      factorial(7);
+
+      function factorial2(n){  //Version 2
+        if(n==0){
+          return 1;
+        }else{
+          var f = n;
+          for(i=n; i>1 ; i--){
+            f =f*(i-1);
+          }
+          return f;
+        }
+      }
+      console.log('Otra forma de n! es asi '+factorial2(5));
+
+      console.log('---------- factorial inverso n! -------');
+
+    function factorialInverso(num){
+        var factorial = 1; 
+        var i =0;
+      if (num%2 ==1){
+        console.log('NINGUNO');
+      }else{
+        while (factorial < num){
+          i++;
+          factorial = factorial* i
+          
+        }
+        console.log("El factorila (Inverso) de "+num+" es "+i+"!");
+      }
+    }
+        factorialInverso(3);
+
+    function factorialInverso2(n){
+      if(n%2 == 1){
+        return 'NINGUNO';
+      }else{
+        var finv =1;
+        for(i=1;finv<n ;i++){
+          x=i;
+          finv = finv*x;
+        }
+        return x;
+      }
+    }   
+    console.log('El factorial inverso es !'+factorialInverso2(3));
+    
+    </script>
+  </body>
+</html>

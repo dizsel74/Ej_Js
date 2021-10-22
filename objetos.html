@@ -497,7 +497,109 @@ const mitad= ({max,min}=estadisticas)=>(max+min)/2;
 console.log(mitad(estadisticas));
 
 
-////////////////////////////////////
+//////////////////////////////////// PLANTILLAS LITERALES O DE CADENA /////////
+/*
+  Caracteristicas:
+  - Se usan el acento invertido (backtick) ` en lugar de comillas+.
+  - Puede contenes comilas simplo o doble.
+  - Las lineas se preservan como se escribe en  el código.
+  - Para reemplazar una variable se escribe ${variable}.
+  - Dentro del ${} tambien se pueden escribir extensiones.
+*/
+
+var a=900;
+console.log(`El valos en ejemple de plantilla de la variable a es ${a}`);
+var name="Juan Pérez";
+var arreglos=["q","w","e","r"];
+console.log(`La variable name es ${name} y el arreglo es ${arreglos} usando JSON se ve así ${JSON.stringify(arreglos)}`);
+
+const NINO={
+  nombre: "Gino Kino",
+  edad :12
+};
+  console.log(`Hola soy ${NINO.nombre} y tengo ${NINO.nombre} años.`); // dan lo mismo
+  const SALUDO= `Hola soy ${NINO.nombre} y tengo ${NINO.nombre} años.`;//dan lo mismo
+
+  console.log(SALUDO);
+
+
+  /////////////////////////// OBJETOS CONSCISOS  /////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+
+//forma larga 
+/* function crearPersona(nombre, edad, genero){ 
+return {
+  name:nombre,
+  age : edad,
+  gender : genero,
+}
+  };*/
+
+//forma flecha ES6
+  const crearPersona=(nombre,edad,genero) => ({nombre, edad, genero}) ;
+
+  console.log(crearPersona("Arturo",42, "masculino"));
+
+//EJEMPLO CON FUNCION DENTRO DE OBJETO
+
+
+//VERSION LARGA
+/*const paciente={
+  nombr:"Marco",
+  diagnostico : function (){
+    return `Mi nombre es ${this.nombr} y mi diagnostico es "catarro". `;
+  }
+};*/
+
+
+//VERSION ES6
+const paciente={
+  nombr:"Marco",
+  diagnostico(){
+    return `Mi nombre es ${this.nombr} y mi diagnostico es "catarro". `;
+  }
+};
+
+console.log(paciente.diagnostico());
+
+/////////////////////////    CLASES
+
+
+class Mascota {
+  constructor(nombre, raza){
+    this.name = nombre;
+    this.race = raza;
+  };
+};
+ var miMascota = new Mascota("BINGO", "Bichon");
+ var tuMascota = new Mascota("Bruno","Ladrador");
+
+ console.log(miMascota);
+ console.log(tuMascota);
+
+ /////////////////////////// geters seters
+
+class LibroNuevo{
+  constructor(autor){
+     this._autor =autor; // el guion bajo indica que no se debe accerder
+  }
+  get autor(){
+    console.log("Getter");
+    return this._autor;
+  }
+  set autor(nuevoAutor){
+    console.log("Setter");
+    return this._autor = nuevoAutor;
+  }
+};
+
+  var miLibro = new LibroNuevo("Arturo Mendoza")
+
+  console.log(miLibro.autor);
+
+  miLibro.autor = "Toño Luneta";
+
+  console.log(miLibro.autor);
 
     </script>
   </body>
