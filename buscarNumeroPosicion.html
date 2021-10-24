@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encontrar Numero y Posicion</title>
+</head>
+<body>
+  <script>
+    //BUSCEDA LINEAL  LINEAR SEARCH
+    
+    function encontraPosicion(arreglo, num){
+      for(i=0; i< arreglo.length; i++){
+          if(n==arreglo[i]){
+            return n+" se encontre en la posicion "+i;
+          }  
+      }
+      return n+" No existe en el arreglo.";
+    }
+
+    var arr=[1,32,443,56,76,4,2,35,7,4,22,0];
+    var n = 0;
+    console.log(encontraPosicion(arr,n));
+  </script>
+</body>
+</html>

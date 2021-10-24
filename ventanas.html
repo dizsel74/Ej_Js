@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arreglos</title>
+</head>
+<body>   
+ unshift - /  shift + [ arreglo  ]  push +   / pop  -
+<br/S>
+  <script>
+
+// var nombre=prompt("saludos");
+// document.getElementById("nombre").innerHTML="";
+
+//USO DE SHIFT, UNSHIFT ----- PUSH POP   Y DE SPLICE Y SLICE
+ var arreglo=["as","bs","cs"];
+
+document.write(arreglo[0]+"<br/>");
+
+document.write(arreglo+"<br>");
+
+document.write(arreglo.length+"<br>");
+
+document.write(arreglo[arreglo.length-2]+"<br>");
+
+arreglo.push("ds");
+  document.write("<br>"+arreglo+" Uso de push ds <br/>");
+arreglo.unshift("1s");
+  document.write("<br>"+arreglo+" Uso de unshift  <<1s>> <br/>");
+
+arreglo.pop();
+  document.write("<br>"+arreglo+" Uso de pop ds  <br/>");  
+
+arreglo.shift();
+    document.write("<br>"+arreglo+" Uso de shift <<1s>> <br>");
+
+arreglo.splice(2,1);
+  document.write("<br>"+arreglo+" Uso de splice(2,1) bs <br>");
+
+
+document.write("<br>"+arreglo.slice(1)+" Uso de slice(1) as <br>");
+ console.log(arreglo.slice(-1));
+
+ arreglo.push(prompt("Agrega algo al final del arreglo"));
+
+ document.write("<br>"+arreglo+"<br>");
+
+</script>
+</body>
+</html>
