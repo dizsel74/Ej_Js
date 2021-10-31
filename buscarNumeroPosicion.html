@@ -18,10 +18,43 @@
       }
       return n+" No existe en el arreglo.";
     }
-
+    //       1 ,2,3  ,4 ,5, 6,7,8,9,10,11,12 //posicion longitud
     var arr=[1,32,443,56,76,4,2,35,7,4,22,0];
+    //       0,1 ,2  ,3 ,4 ,5,6,7 ,8,9,10,11  // posicion en arreglo
     var n = 0;
     console.log(encontraPosicion(arr,n));
+
+
+    //busqueda Binaria 
+
+    /*function busquedaBinaria(arreglo,n){
+      
+      control =0;
+      var longitud = arreglo.length;
+      console.log("longitud "+longitud);
+
+      while(control <= longitud){
+        var mitad = Math.round(longitud/2);
+          console.log("MITAD "+mitad);
+          
+        if(n==arreglo[mitad-1]){
+          return "Si se encontro en la posicion "+ mitad;
+        }
+      
+        else if(arreglo[mitad-1]<n){
+          control = mitad + 1;
+        }else {
+          longitud =mitad - 1; 
+        }
+    
+      }
+      return "no";
+    }
+      var arrOrde=[1,2,3,56,76,86,100,350,700];
+      //                     *
+      var n2 = 86;
+console.log(busquedaBinaria(arrOrde,n2));*/
+
   </script>
 </body>
 </html>
