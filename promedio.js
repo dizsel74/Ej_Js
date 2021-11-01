@@ -20,4 +20,9 @@
 
 //  arreglo.splice(7,4,7,8,9,10);// ejemplo de quitar elemento desde x posición y rem´plazarlo por otros
 //  console.log(arreglo);
+console.log(arreglo.reverse());
+console.log(arreglo.sort(function(a,b){return a-b}));//CALLBACK 
+
+arreglo.indexOf(22); // devuelve si es que existe en el arreglo
+
 }
