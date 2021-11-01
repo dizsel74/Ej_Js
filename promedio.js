@@ -17,4 +17,7 @@
 
  }
  console.log(prom(arreglo));
+
+//  arreglo.splice(7,4,7,8,9,10);// ejemplo de quitar elemento desde x posición y rem´plazarlo por otros
+//  console.log(arreglo);
 }
