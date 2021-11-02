@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="esp">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Call Back and Asyncronus function</title>
+</head>
+<body>
+   <p>The call back function is use mostly in asyncronus functión and widly use in one page aplication </p>
+   <p>Higher order function is a function that has as parameter another function ej. <br><b>function Higher(inside){<br>...}</b><br>
+      function inside(){.... console.loge("algo");}
+   
+   </p>
+   <script>
+      {
+         /* THIS IS funcion declaration this type is hoisted in the 1st scan it puts in memory the function potencia .... you could call the funcion before it*/
+         console.log("Ejemplo 1 delaracion de funcion");
+         
+         function potencia(x,y){
+            let total =1;
+            for(let i=0;i<y;i++){
+                total*=x; // total = total*x;
+            }
+         return total;
+         }
+
+         console.log(potencia(3,3));
+
+         /*  THIS IS A  function expresion this type is not hoisted in the 1st scan it put i memory the variabli myExpresion .... so you most call the function after the expresion */
+         
+         console.log("Ejemplo 2 expresion de una funcion");
+         let myExpresion = function(x,y){
+            let total =1;
+            for(let i=0;i<y;i++){
+               total*=x; // total = total*x;
+            }
+         return total;
+         }
+ 
+         console.log(myExpresion(3,3));
+      }
+   </script>
+</body>
+</html>
